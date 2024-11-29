@@ -1,0 +1,5 @@
+velocidad1 = float(input("Velocidad del primer cuerpo: "))
+velocidad2 = float(input("Velocidad del segundo cuerpo: "))
+distancia = float(input("Distancia de los cuerpos: "))
+tiempoDeEncuentro = distancia/(velocidad1+velocidad2)
+print("El tiempo de encuentro es de: ",tiempoDeEncuentro)

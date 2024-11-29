@@ -1,0 +1,32 @@
+import mysql.connector
+
+# Conectar a la base de datos
+conexion = mysql.connector.connect(
+    host="127.0.0.1",
+    user="root",
+    password="",
+    database="phpmyadmin"
+)
+
+# Crear un cursor para ejecutar consultas
+cursor = conexion.cursor()
+
+# Ejemplo: Insertar un estudiante n la tabla de estudiantes
+idestudiantes =  7
+nombre = "Marcelo Lopez"
+edad = 31
+curso = "Ciencias"
+
+# Consulta SQL para la inserción
+consulta = "INSERT INTO estudiantes (idestudiantes, nombre, edad, curso) VALUES (%s, %s, %s, %s)"
+datos = (idestudiantes, nombre, edad, curso)
+
+# Ejecutar la consulta
+cursor.execute(consulta, datos)
+
+# Confirmar los cambios en la base de datos
+conexion.commit()
+
+# Cerrar el cursor y la conexión
+cursor.close()
+conexion.close()
